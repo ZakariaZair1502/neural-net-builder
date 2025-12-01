@@ -119,6 +119,48 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-space;
+  }
+}
+
+@layer utilities {
+  .gradient-mesh {
+    background: 
+      radial-gradient(at 0% 0%, hsla(243, 75%, 59%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(168, 76%, 42%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(217, 91%, 60%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(14, 100%, 57%, 0.15) 0px, transparent 50%);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .neural-connection {
+    position: relative;
+  }
+  
+  .neural-connection::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, hsl(var(--primary)), transparent);
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    opacity: 0.3;
+  }
+  
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
   }
 }

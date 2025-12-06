@@ -72,7 +72,7 @@ const LayerVisualization: React.FC<{
   index: number;
   isTraining: boolean;
 }> = ({ layer, onClick, index, isTraining }) => {
-  const isClickable = layer.type === 'Hidden' || layer.type === 'Output';
+  const isClickable = layer.type === 'Hidden';
 
   let bgGradient = '';
   let glowColor = '';
@@ -530,7 +530,7 @@ const Index = () => {
 
   const handleLayerClick = (id: number) => {
     const layer = layers.find(l => l.id === id);
-    if (layer && (layer.type === 'Hidden' || layer.type === 'Output')) {
+    if (layer && (layer.type === 'Hidden')) {
       setEditingLayerId(id);
       setIsModalOpen(true);
     }

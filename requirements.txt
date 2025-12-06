@@ -1,0 +1,9 @@
+Flask
+flask-cors
+numpy
+tensorflow
+scikit-learn
+pandas
+pymongo
+flask-jwt-extended
+bcrypt
